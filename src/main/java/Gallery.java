@@ -2,18 +2,22 @@ import java.util.ArrayList;
 
 public class Gallery {
 
+    //properties
+
     private String name;
 
     private double till;
 
     private ArrayList<Artwork> stock;
 
+    //constructor
     public Gallery(String name){
         this.name = name;
         this.till = 0;
         this.stock= new ArrayList<Artwork>();
     }
 
+    //behaviour /methods
     public String getName(){
         return this.name;
    }

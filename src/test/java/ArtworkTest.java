@@ -9,7 +9,6 @@ public class ArtworkTest {
     @BeforeEach
     public void setUp(){
         turtle = new Artwork("Turtle", "Picasso", 5);
-
     }
 
     @Test
@@ -43,8 +42,8 @@ public class ArtworkTest {
     @Test
     public void canSetPrice(){
         turtle.setPrice(10);
-        assertThat(turtle.getPrice())isEqualTo(10);
-       
+        assertThat(turtle.getPrice()).isEqualTo(10);
+
     }
 
 

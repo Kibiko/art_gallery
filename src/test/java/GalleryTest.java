@@ -5,11 +5,12 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 public class GalleryTest {
 
     Gallery gallery;
+    Artwork horse;
 
     @BeforeEach
     public void setUp(){
         gallery = new Gallery("Viewing Gallery");
-        Artwork horse = new Artwork("horse", "Picasso", 60);
+        horse = new Artwork("horse", "Picasso", 60);
         Artwork elephant = new Artwork("elephant", "Picasso", 90);
         Artwork falcon = new Artwork("falcon", "Picasso", 60);
         gallery.addArtworkToGallery(horse);
@@ -20,7 +21,6 @@ public class GalleryTest {
     @Test
     public void canGetGalleryName(){
         assertThat(gallery.getName()).isEqualTo("ViewingGallery");
-
     }
 
     @Test
