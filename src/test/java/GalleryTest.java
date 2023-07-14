@@ -20,7 +20,7 @@ public class GalleryTest {
 
     @Test
     public void canGetGalleryName(){
-        assertThat(gallery.getName()).isEqualTo("ViewingGallery");
+        assertThat(gallery.getName()).isEqualTo("Viewing Gallery");
     }
 
     @Test
@@ -61,5 +61,10 @@ public class GalleryTest {
     public void canAddToTill(){
          gallery.addToTill(20);
          assertThat(gallery.getTill()).isEqualTo(20);
+    }
+
+    @Test
+    public void canValueStock(){
+        assertThat(gallery.stock_take()).isEqualTo(210);
     }
 }

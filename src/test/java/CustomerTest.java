@@ -26,6 +26,12 @@ public class CustomerTest {
     }
 
     @Test
+    public void canSetName(){
+        gallery.setName("Private Gallery");
+        assertThat(gallery.getName()).isEqualTo("Private Gallery");
+    }
+
+    @Test
     public void canGetWallet(){
         assertThat(customer.getWallet()).isEqualTo(200);
     }
@@ -37,11 +43,17 @@ public class CustomerTest {
     }
 
     @Test
-    public void canBuy(){
-        customer.buy(horse.getPrice(), gallery);
+    public void canBuyAndChangeWallet(){
+        customer.buy(horse, gallery);
         assertThat(customer.getWallet()).isEqualTo(140);
         assertThat(gallery.getTill()).isEqualTo(60);
+    }
 
+    @Test
+    public void didBuyAndChangeStock(){
+        customer.buy(horse,gallery);
+        assertThat(customer.artCollection.size()).isEqualTo(1);
+        assertThat(gallery.getStockCount()).isEqualTo(2);
     }
 
 

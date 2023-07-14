@@ -53,6 +53,14 @@ public class Gallery {
         this.stock.add(artwork);
    }
 
+   public double stock_take(){
+        double sum = 0;
+        for (Artwork art : this.stock){
+            sum += art.getPrice();
+        }
+        return sum;
+   }
+
 
 
 

@@ -15,7 +15,11 @@ public class Artist {
     }
 
     public void addArtist(String name){
+        if(this.name.contains(name)) {
+            System.out.println("Arist already registered");
+        } else{
             this.name.add(name);
+        }
     }
 
 }

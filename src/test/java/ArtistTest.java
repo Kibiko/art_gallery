@@ -28,14 +28,14 @@ public class ArtistTest {
      }
     @Test
     public void canGetArtistSize(){
-            assertThat(artists.getSize()).isEqualTo(3);
+            assertThat(artists.getSize()).isEqualTo(1);
 
     }
 
     @Test
     public void canAddArtist(){
-            artists.addArtist("Picasso");
-            assertThat(artists.getSize()).isEqualTo(4);
+            artists.addArtist("Lamees");
+            assertThat(artists.getSize()).isEqualTo(2);
     }
 
 }
