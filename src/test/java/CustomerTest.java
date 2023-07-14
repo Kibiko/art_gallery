@@ -45,6 +45,17 @@ public class CustomerTest {
     }
 
     @Test
+    public void canBuy(){
+        assertThat(customer.canBuy(horse)).isEqualTo(true);
+    }
+
+    @Test
+    public void cantBuy(){
+        customer.setWallet(10);
+        assertThat(customer.canBuy(horse)).isEqualTo(false);
+    }
+
+    @Test
     public void canBuyAndChangeWallet(){
         customer.buy(horse, gallery);
         assertThat(customer.getWallet()).isEqualTo(140);

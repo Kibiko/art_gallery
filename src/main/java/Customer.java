@@ -28,8 +28,15 @@ public class Customer {
         this.wallet = amount;
     }
 
+    public boolean canBuy(Artwork art){
+        if (art.getPrice() <= this.wallet){
+            return true;
+        }
+        return false;
+    }
+
     public void buy(Artwork art, Gallery gallery){
-        if(this.wallet - art.getPrice() >= 0) {
+        if(canBuy(art)) {
             this.wallet -= art.getPrice();
             gallery.setTill(gallery.getTill() + art.getPrice());
             gallery.removeArtwork(art);
