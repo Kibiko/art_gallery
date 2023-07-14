@@ -6,13 +6,15 @@ public class GalleryTest {
 
     Gallery gallery;
     Artwork horse;
+    Artist artist;
 
     @BeforeEach
     public void setUp(){
         gallery = new Gallery("Viewing Gallery");
-        horse = new Artwork("horse", "Picasso", 60);
-        Artwork elephant = new Artwork("elephant", "Picasso", 90);
-        Artwork falcon = new Artwork("falcon", "Picasso", 60);
+        artist = new Artist("Picasso");
+        horse = new Artwork("horse", artist, 60);
+        Artwork elephant = new Artwork("elephant", artist, 90);
+        Artwork falcon = new Artwork("falcon", artist, 60);
         gallery.addArtworkToGallery(horse);
         gallery.addArtworkToGallery(elephant);
         gallery.addArtworkToGallery(falcon);
@@ -52,7 +54,7 @@ public class GalleryTest {
 
     @Test
     public void canAddArtworkToGallery(){
-        Artwork lion = new Artwork("lion", "Picasso", 100);
+        Artwork lion = new Artwork("lion", artist, 100);
         gallery.addArtworkToGallery(lion);
         assertThat(gallery.getStockCount()).isEqualTo(4);
     }

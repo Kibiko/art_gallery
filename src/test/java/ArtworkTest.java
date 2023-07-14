@@ -5,10 +5,12 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 public class ArtworkTest {
 
     Artwork turtle;
+    Artist artist;
 
     @BeforeEach
     public void setUp(){
-        turtle = new Artwork("Turtle", "Picasso", 5);
+        artist = new Artist("Picasso");
+        turtle = new Artwork("Turtle", artist, 5);
     }
 
     @Test
@@ -25,14 +27,20 @@ public class ArtworkTest {
     }
 
     @Test
+    public void canGetArtistName(){
+        assertThat(turtle.getArtist().getName()).isEqualTo("Picasso");
+    }
+
+    @Test
     public void canGetArtist(){
-        assertThat(turtle.getArtist()).isEqualTo("Picasso");
+        assertThat(turtle.getArtist()).isEqualTo(artist);
     }
 
     @Test
     public void canSetArtist(){
-        turtle.setArtist("Kevin");
-        assertThat(turtle.getArtist()).isEqualTo("Kevin");
+        artist = new Artist("Kevin");
+        turtle.setArtist(artist);
+        assertThat(turtle.getArtist().getName()).isEqualTo("Kevin");
     }
     @Test
     public void canGetPrice(){

@@ -8,34 +8,26 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
 public class ArtistTest {
 
-     Artist artists;
+     Artist artist;
      Gallery gallery;
      Artwork horse;
 
      @BeforeEach
      public void setUp(){
          gallery = new Gallery("Viewing Gallery");
-         horse = new Artwork("horse", "Picasso", 60);
-         Artwork elephant = new Artwork("elephant", "Picasso", 90);
-         Artwork falcon = new Artwork("falcon", "Picasso", 60);
+         artist = new Artist("Picasso");
+         horse = new Artwork("horse", artist, 60);
+         Artwork elephant = new Artwork("elephant", artist, 90);
+         Artwork falcon = new Artwork("falcon", artist, 60);
          gallery.addArtworkToGallery(horse);
          gallery.addArtworkToGallery(elephant);
          gallery.addArtworkToGallery(falcon);
-         artists = new Artist();
-         artists.addArtist(horse.getArtist());
-         artists.addArtist(elephant.getArtist());
-         artists.addArtist(falcon.getArtist());
      }
-    @Test
-    public void canGetArtistSize(){
-            assertThat(artists.getSize()).isEqualTo(1);
 
-    }
+     @Test
+    public void canGetArtist(){
+         assertThat(artist.getName()).isEqualTo("Picasso");
+     }
 
-    @Test
-    public void canAddArtist(){
-            artists.addArtist("Lamees");
-            assertThat(artists.getSize()).isEqualTo(2);
-    }
 
 }

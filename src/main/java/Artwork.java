@@ -4,11 +4,11 @@ public class Artwork {
 
     private String name;
     private double price;
-    private String artist;
+    private Artist artist;
 
     //CONSTRUCTOR
 
-    public Artwork(String name, String artist, double price){
+    public Artwork(String name, Artist artist, double price){
         this.name = name;
         this.artist = artist;
         this.price = price;
@@ -24,11 +24,11 @@ public class Artwork {
         this.name = name;
     }
 
-    public String getArtist(){
+    public Artist getArtist(){
         return this.artist;
     }
 
-    public void setArtist(String artist){
+    public void setArtist(Artist artist){
         this.artist = artist;
     }
 

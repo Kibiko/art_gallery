@@ -7,14 +7,16 @@ public class CustomerTest {
     Customer customer;
     Gallery gallery;
     Artwork horse;
+    Artist artist;
 
     @BeforeEach
     public void setUp(){
         customer = new Customer("Lamees", 200);
         gallery = new Gallery("Viewing Gallery");
-        horse = new Artwork("horse", "Picasso", 60);
-        Artwork elephant = new Artwork("elephant", "Picasso", 90);
-        Artwork falcon = new Artwork("falcon", "Picasso", 60);
+        artist = new Artist("Picasso");
+        horse = new Artwork("horse", artist, 60);
+        Artwork elephant = new Artwork("elephant", artist, 90);
+        Artwork falcon = new Artwork("falcon", artist, 60);
         gallery.addArtworkToGallery(horse);
         gallery.addArtworkToGallery(elephant);
         gallery.addArtworkToGallery(falcon);
