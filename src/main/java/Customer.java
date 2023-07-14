@@ -29,9 +29,13 @@ public class Customer {
     }
 
     public void buy(Artwork art, Gallery gallery){
-        this.wallet -= art.getPrice();
-        gallery.setTill(gallery.getTill() + art.getPrice());
-        gallery.removeArtwork(art);
-        this.artCollection.add(art);
+        if(this.wallet - art.getPrice() >= 0) {
+            this.wallet -= art.getPrice();
+            gallery.setTill(gallery.getTill() + art.getPrice());
+            gallery.removeArtwork(art);
+            this.artCollection.add(art);
+        } else{
+            System.out.println("Not enough funds!");
+        }
     }
 }

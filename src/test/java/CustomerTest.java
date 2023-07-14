@@ -58,6 +58,13 @@ public class CustomerTest {
         assertThat(gallery.getStockCount()).isEqualTo(2);
     }
 
+    @Test
+    public void cantBuyArt(){
+        customer.setWallet(10);
+        customer.buy(horse,gallery);
+        assertThat(customer.getWallet()).isEqualTo(10);
+    }
+
 
 
 
